@@ -1,0 +1,1389 @@
+[
+{
+"name": "cmds",
+"aliases": [
+"اوامر",
+"commands",
+"help",
+"مساعدة"
+],
+"rank": 1,
+"cat": "عام",
+"desc": "يفتح قائمة الأوامر في اللوحة",
+"args": [],
+"icon": "📜"
+},
+{
+"name": "panel",
+"aliases": [
+"لوحة",
+"admin"
+],
+"rank": 1,
+"cat": "عام",
+"desc": "يفتح لوحة التحكم",
+"args": [],
+"icon": "🦅"
+},
+{
+"name": "info",
+"aliases": [
+"معلومات"
+],
+"rank": 2,
+"cat": "عام",
+"desc": "معلومات عن لاعب",
+"args": [
+"player"
+],
+"icon": "🔍"
+},
+{
+"name": "logs",
+"aliases": [
+"سجل"
+],
+"rank": 2,
+"cat": "عام",
+"desc": "سجل الأوامر",
+"args": [],
+"icon": "🗂️"
+},
+{
+"name": "kick",
+"aliases": [
+"طرد"
+],
+"rank": 2,
+"cat": "الإدارة",
+"desc": "يطرد لاعب من السيرفر",
+"args": [
+"players",
+"text?"
+],
+"icon": "👢"
+},
+{
+"name": "ban",
+"aliases": [
+"باند",
+"حظر"
+],
+"rank": 3,
+"cat": "الإدارة",
+"desc": "باند دائم (يشتغل حتى لو اللاعب مو موجود — اكتب اسمه أو الآيدي)",
+"args": [
+"string",
+"text?"
+],
+"icon": "🔨"
+},
+{
+"name": "tempban",
+"aliases": [
+"بندمؤقت",
+"tban"
+],
+"rank": 2,
+"cat": "الإدارة",
+"desc": "باند مؤقت — مثال: ;tempban Ahmed 2h سبام",
+"args": [
+"string",
+"time",
+"text?"
+],
+"icon": "⏳"
+},
+{
+"name": "unban",
+"aliases": [
+"فكباند",
+"الغاءباند"
+],
+"rank": 3,
+"cat": "الإدارة",
+"desc": "يشيل الباند",
+"args": [
+"string"
+],
+"icon": "🕊️"
+},
+{
+"name": "warn",
+"aliases": [
+"تحذير",
+"انذار"
+],
+"rank": 2,
+"cat": "الإدارة",
+"desc": "يرسل تحذير رسمي يطلع على شاشة اللاعب",
+"args": [
+"players",
+"text"
+],
+"icon": "⚠️"
+},
+{
+"name": "mute",
+"aliases": [
+"كتم",
+"ميوت"
+],
+"rank": 2,
+"cat": "الإدارة",
+"desc": "يكتم اللاعب في الشات",
+"args": [
+"players"
+],
+"icon": "🔇"
+},
+{
+"name": "unmute",
+"aliases": [
+"فككتم"
+],
+"rank": 2,
+"cat": "الإدارة",
+"desc": "يفك الكتم",
+"args": [
+"players"
+],
+"icon": "🔊"
+},
+{
+"name": "jail",
+"aliases": [
+"سجن"
+],
+"rank": 2,
+"cat": "الإدارة",
+"desc": "يسجن اللاعب في قفص ليزر",
+"args": [
+"players"
+],
+"icon": "⛓️"
+},
+{
+"name": "unjail",
+"aliases": [
+"فكسجن"
+],
+"rank": 2,
+"cat": "الإدارة",
+"desc": "يطلع اللاعب من السجن",
+"args": [
+"players"
+],
+"icon": "🔓"
+},
+{
+"name": "freeze",
+"aliases": [
+"تجميد",
+"فريز"
+],
+"rank": 2,
+"cat": "الإدارة",
+"desc": "يجمد اللاعب داخل مكعب ثلج",
+"args": [
+"players"
+],
+"icon": "🧊"
+},
+{
+"name": "unfreeze",
+"aliases": [
+"thaw",
+"فكتجميد"
+],
+"rank": 2,
+"cat": "الإدارة",
+"desc": "يفك التجميد",
+"args": [
+"players"
+],
+"icon": "🔥"
+},
+{
+"name": "kill",
+"aliases": [
+"قتل"
+],
+"rank": 2,
+"cat": "اللاعبين",
+"desc": "يقتل اللاعب",
+"args": [
+"players"
+],
+"icon": "💀"
+},
+{
+"name": "respawn",
+"aliases": [
+"re",
+"رسبون",
+"احياء"
+],
+"rank": 2,
+"cat": "اللاعبين",
+"desc": "يعيد إحياء اللاعب",
+"args": [
+"players?"
+],
+"icon": "♻️"
+},
+{
+"name": "refresh",
+"aliases": [
+"ref",
+"تحديث"
+],
+"rank": 2,
+"cat": "اللاعبين",
+"desc": "رسبون بنفس المكان",
+"args": [
+"players?"
+],
+"icon": "🔄"
+},
+{
+"name": "heal",
+"aliases": [
+"علاج"
+],
+"rank": 2,
+"cat": "اللاعبين",
+"desc": "يرجع الصحة كاملة",
+"args": [
+"players?"
+],
+"icon": "💚"
+},
+{
+"name": "health",
+"aliases": [
+"صحة",
+"hp"
+],
+"rank": 2,
+"cat": "اللاعبين",
+"desc": "يحدد الصحة القصوى",
+"args": [
+"players",
+"number"
+],
+"icon": "❤️"
+},
+{
+"name": "god",
+"aliases": [
+"خلود"
+],
+"rank": 3,
+"cat": "اللاعبين",
+"desc": "ما يموت أبداً",
+"args": [
+"players?"
+],
+"icon": "🛡️"
+},
+{
+"name": "ungod",
+"aliases": [
+"فكخلود"
+],
+"rank": 3,
+"cat": "اللاعبين",
+"desc": "يشيل الخلود",
+"args": [
+"players?"
+],
+"icon": "🗡️"
+},
+{
+"name": "ff",
+"aliases": [
+"forcefield",
+"درع"
+],
+"rank": 2,
+"cat": "اللاعبين",
+"desc": "درع حماية",
+"args": [
+"players?"
+],
+"icon": "🔵"
+},
+{
+"name": "unff",
+"aliases": [
+"فكدرع"
+],
+"rank": 2,
+"cat": "اللاعبين",
+"desc": "يشيل الدرع",
+"args": [
+"players?"
+],
+"icon": "⚪"
+},
+{
+"name": "invisible",
+"aliases": [
+"invis",
+"اخفاء"
+],
+"rank": 3,
+"cat": "اللاعبين",
+"desc": "يخفي اللاعب",
+"args": [
+"players?"
+],
+"icon": "👻"
+},
+{
+"name": "visible",
+"aliases": [
+"vis",
+"اظهار"
+],
+"rank": 3,
+"cat": "اللاعبين",
+"desc": "يظهر اللاعب",
+"args": [
+"players?"
+],
+"icon": "👁️"
+},
+{
+"name": "size",
+"aliases": [
+"حجم",
+"scale"
+],
+"rank": 3,
+"cat": "اللاعبين",
+"desc": "يكبّر أو يصغّر اللاعب (0.2 إلى 8)",
+"args": [
+"players",
+"number"
+],
+"icon": "📏"
+},
+{
+"name": "team",
+"aliases": [
+"فريق"
+],
+"rank": 2,
+"cat": "اللاعبين",
+"desc": "ينقل اللاعب لفريق",
+"args": [
+"players",
+"text"
+],
+"icon": "🎽"
+},
+{
+"name": "give",
+"aliases": [
+"اعطاء",
+"tool"
+],
+"rank": 3,
+"cat": "اللاعبين",
+"desc": "يعطي أداة من ServerStorage > SaqrTools",
+"args": [
+"players",
+"text"
+],
+"icon": "🎁"
+},
+{
+"name": "removetools",
+"aliases": [
+"شيلادوات",
+"clearinv"
+],
+"rank": 2,
+"cat": "اللاعبين",
+"desc": "يشيل كل أدوات اللاعب",
+"args": [
+"players"
+],
+"icon": "🧹"
+},
+{
+"name": "tp",
+"aliases": [
+"نقل",
+"teleport"
+],
+"rank": 2,
+"cat": "الحركة",
+"desc": "ينقل لاعبين إلى لاعب: ;tp Ahmed Sara",
+"args": [
+"players",
+"player"
+],
+"icon": "🌀"
+},
+{
+"name": "bring",
+"aliases": [
+"جيب",
+"سحب"
+],
+"rank": 2,
+"cat": "الحركة",
+"desc": "يجيب اللاعب عندك",
+"args": [
+"players"
+],
+"icon": "🧲"
+},
+{
+"name": "to",
+"aliases": [
+"روح",
+"goto"
+],
+"rank": 2,
+"cat": "الحركة",
+"desc": "تروح عند لاعب",
+"args": [
+"player"
+],
+"icon": "➡️"
+},
+{
+"name": "speed",
+"aliases": [
+"سرعة",
+"ws"
+],
+"rank": 2,
+"cat": "الحركة",
+"desc": "سرعة المشي (الطبيعي 16)",
+"args": [
+"players",
+"number"
+],
+"icon": "⚡"
+},
+{
+"name": "jump",
+"aliases": [
+"قفز",
+"jp"
+],
+"rank": 2,
+"cat": "الحركة",
+"desc": "قوة القفز (الطبيعي 50)",
+"args": [
+"players",
+"number"
+],
+"icon": "🦘"
+},
+{
+"name": "fly",
+"aliases": [
+"طيران"
+],
+"rank": 3,
+"cat": "الحركة",
+"desc": "طيران (E فوق / Q تحت)",
+"args": [
+"players?",
+"number?"
+],
+"icon": "🕊️"
+},
+{
+"name": "unfly",
+"aliases": [
+"فكطيران"
+],
+"rank": 3,
+"cat": "الحركة",
+"desc": "يوقف الطيران",
+"args": [
+"players?"
+],
+"icon": "🪨"
+},
+{
+"name": "noclip",
+"aliases": [
+"اختراق"
+],
+"rank": 3,
+"cat": "الحركة",
+"desc": "يمشي من خلال الجدران",
+"args": [
+"players?"
+],
+"icon": "🧱"
+},
+{
+"name": "clip",
+"aliases": [
+"فكاختراق"
+],
+"rank": 3,
+"cat": "الحركة",
+"desc": "يوقف الاختراق",
+"args": [
+"players?"
+],
+"icon": "🧱"
+},
+{
+"name": "view",
+"aliases": [
+"مراقبة",
+"spectate"
+],
+"rank": 2,
+"cat": "الحركة",
+"desc": "تراقب لاعب بالكاميرا",
+"args": [
+"player"
+],
+"icon": "🎥"
+},
+{
+"name": "unview",
+"aliases": [
+"فكمراقبة"
+],
+"rank": 2,
+"cat": "الحركة",
+"desc": "ترجع الكاميرا لك",
+"args": [],
+"icon": "🎥"
+},
+{
+"name": "sit",
+"aliases": [
+"جلوس"
+],
+"rank": 2,
+"cat": "الحركة",
+"desc": "",
+"args": [
+"players"
+],
+"icon": "🪑"
+},
+{
+"name": "rejoin",
+"aliases": [
+"اعادةدخول",
+"rj"
+],
+"rank": 2,
+"cat": "الحركة",
+"desc": "يرجع اللاعب لنفس السيرفر",
+"args": [
+"players?"
+],
+"icon": "🔁"
+},
+{
+"name": "fire",
+"aliases": [
+"نار"
+],
+"rank": 2,
+"cat": "المرح",
+"desc": "",
+"args": [
+"players?"
+],
+"icon": "🔥"
+},
+{
+"name": "sparkles",
+"aliases": [
+"لمعة"
+],
+"rank": 2,
+"cat": "المرح",
+"desc": "",
+"args": [
+"players?"
+],
+"icon": "✨"
+},
+{
+"name": "smoke",
+"aliases": [
+"دخان"
+],
+"rank": 2,
+"cat": "المرح",
+"desc": "",
+"args": [
+"players?"
+],
+"icon": "💨"
+},
+{
+"name": "unfx",
+"aliases": [
+"شيلتأثيرات",
+"clearfx"
+],
+"rank": 2,
+"cat": "المرح",
+"desc": "يشيل النار واللمعة والدخان",
+"args": [
+"players?"
+],
+"icon": "🧽"
+},
+{
+"name": "aura",
+"aliases": [
+"هالة"
+],
+"rank": 3,
+"cat": "المرح",
+"desc": "هالة طاقة ذهبية حول اللاعب",
+"args": [
+"players?"
+],
+"icon": "💫"
+},
+{
+"name": "explode",
+"aliases": [
+"تفجير"
+],
+"rank": 3,
+"cat": "المرح",
+"desc": "",
+"args": [
+"players"
+],
+"icon": "💥"
+},
+{
+"name": "fling",
+"aliases": [
+"قذف"
+],
+"rank": 3,
+"cat": "المرح",
+"desc": "",
+"args": [
+"players"
+],
+"icon": "🚀"
+},
+{
+"name": "spin",
+"aliases": [
+"دوران"
+],
+"rank": 2,
+"cat": "المرح",
+"desc": "",
+"args": [
+"players?"
+],
+"icon": "🌪️"
+},
+{
+"name": "unspin",
+"aliases": [
+"فكدوران"
+],
+"rank": 2,
+"cat": "المرح",
+"desc": "",
+"args": [
+"players?"
+],
+"icon": "⏹️"
+},
+{
+"name": "launch",
+"aliases": [
+"اطلاق",
+"rocket"
+],
+"rank": 3,
+"cat": "المرح",
+"desc": "يطلق اللاعب للسما مثل الصاروخ",
+"args": [
+"players"
+],
+"icon": "🎆"
+},
+{
+"name": "announce",
+"aliases": [
+"m",
+"اعلان",
+"رسالة"
+],
+"rank": 2,
+"cat": "الرسائل",
+"desc": "إعلان سينمائي لكل السيرفر",
+"args": [
+"text"
+],
+"icon": "📢"
+},
+{
+"name": "hint",
+"aliases": [
+"h",
+"تلميح"
+],
+"rank": 2,
+"cat": "الرسائل",
+"desc": "شريط رسالة فوق الشاشة",
+"args": [
+"text"
+],
+"icon": "💬"
+},
+{
+"name": "pm",
+"aliases": [
+"خاص",
+"dm"
+],
+"rank": 2,
+"cat": "الرسائل",
+"desc": "رسالة خاصة",
+"args": [
+"players",
+"text"
+],
+"icon": "✉️"
+},
+{
+"name": "alert",
+"aliases": [
+"تنبيه"
+],
+"rank": 3,
+"cat": "الرسائل",
+"desc": "تنبيه أحمر يغطي الشاشة",
+"args": [
+"players",
+"text"
+],
+"icon": "🚨"
+},
+{
+"name": "countdown",
+"aliases": [
+"عد",
+"عدتنازلي"
+],
+"rank": 2,
+"cat": "الرسائل",
+"desc": "عد تنازلي ضخم على الشاشة",
+"args": [
+"number"
+],
+"icon": "⏱️"
+},
+{
+"name": "title",
+"aliases": [
+"عنوان"
+],
+"rank": 3,
+"cat": "الرسائل",
+"desc": "عنوان سينمائي مع أشرطة الفيلم السوداء",
+"args": [
+"text"
+],
+"icon": "🎬"
+},
+{
+"name": "time",
+"aliases": [
+"وقت",
+"clocktime"
+],
+"rank": 3,
+"cat": "السيرفر",
+"desc": "يغير وقت اليوم (0-24)",
+"args": [
+"number"
+],
+"icon": "🕐"
+},
+{
+"name": "fog",
+"aliases": [
+"ضباب"
+],
+"rank": 3,
+"cat": "السيرفر",
+"desc": "مسافة الضباب (كل ما قل زاد الضباب)",
+"args": [
+"number"
+],
+"icon": "🌫️"
+},
+{
+"name": "gravity",
+"aliases": [
+"جاذبية",
+"grav"
+],
+"rank": 3,
+"cat": "السيرفر",
+"desc": "الجاذبية (الطبيعي 196.2)",
+"args": [
+"number?"
+],
+"icon": "🪐"
+},
+{
+"name": "music",
+"aliases": [
+"اغنية",
+"play"
+],
+"rank": 2,
+"cat": "السيرفر",
+"desc": "يشغل صوت/موسيقى بالآيدي: ;music 123456 0.5",
+"args": [
+"number",
+"number?"
+],
+"icon": "🎵"
+},
+{
+"name": "stopmusic",
+"aliases": [
+"وقفاغنية",
+"stop"
+],
+"rank": 2,
+"cat": "السيرفر",
+"desc": "",
+"args": [],
+"icon": "⏹️"
+},
+{
+"name": "clean",
+"aliases": [
+"تنظيف",
+"clear"
+],
+"rank": 2,
+"cat": "السيرفر",
+"desc": "ينظف كل مخلفات الأوامر والأحداث",
+"args": [],
+"icon": "🧼"
+},
+{
+"name": "slock",
+"aliases": [
+"قفل",
+"lock"
+],
+"rank": 3,
+"cat": "السيرفر",
+"desc": "يقفل السيرفر (ما يدخل إلا رتبة كذا وفوق)",
+"args": [
+"number?"
+],
+"icon": "🔒"
+},
+{
+"name": "unslock",
+"aliases": [
+"فتح",
+"unlock"
+],
+"rank": 3,
+"cat": "السيرفر",
+"desc": "",
+"args": [],
+"icon": "🔓"
+},
+{
+"name": "shutdown",
+"aliases": [
+"اغلاق",
+"سكر"
+],
+"rank": 4,
+"cat": "السيرفر",
+"desc": "يقفل السيرفر بعد عد تنازلي سينمائي",
+"args": [
+"text?"
+],
+"icon": "🛑"
+},
+{
+"name": "rank",
+"aliases": [
+"رتبة",
+"setrank"
+],
+"rank": 3,
+"cat": "الرتب",
+"desc": "رتبة مؤقتة لهذا السيرفر (0-5)",
+"args": [
+"player",
+"number"
+],
+"icon": "🎖️"
+},
+{
+"name": "permrank",
+"aliases": [
+"رتبةدائمة"
+],
+"rank": 4,
+"cat": "الرتب",
+"desc": "رتبة دائمة تنحفظ (0 = يشيلها)",
+"args": [
+"player",
+"number"
+],
+"icon": "🏅"
+},
+{
+"name": "unrank",
+"aliases": [
+"شيلرتبة"
+],
+"rank": 3,
+"cat": "الرتب",
+"desc": "",
+"args": [
+"player"
+],
+"icon": "⬇️"
+},
+{
+"name": "admins",
+"aliases": [
+"الادارة",
+"staff"
+],
+"rank": 1,
+"cat": "الرتب",
+"desc": "مين الإداريين الموجودين",
+"args": [],
+"icon": "👑"
+},
+{
+"name": "gannounce",
+"aliases": [
+"اعلانعام",
+"global"
+],
+"rank": 4,
+"cat": "عالمي",
+"desc": "إعلان لكل سيرفرات اللعبة",
+"args": [
+"text"
+],
+"icon": "📡"
+},
+{
+"name": "gcmd",
+"aliases": [
+"امرعام"
+],
+"rank": 5,
+"cat": "عالمي",
+"desc": "ينفذ أمر في كل السيرفرات: ;gcmd meteor",
+"args": [
+"text"
+],
+"icon": "🌐"
+},
+{
+"name": "gshutdown",
+"aliases": [
+"اغلاقعام"
+],
+"rank": 5,
+"cat": "عالمي",
+"desc": "يقفل كل سيرفرات اللعبة",
+"args": [],
+"icon": "☢️"
+},
+{
+"name": "meteor",
+"aliases": [
+"نيازك",
+"meteors"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "نيازك مشتعلة تنزل من السماء وتنفجر",
+"args": [],
+"icon": "☄️",
+"title": "مطر النيازك"
+},
+{
+"name": "nuke",
+"aliases": [
+"نووي",
+"قنبلة",
+"nuclear"
+],
+"rank": 4,
+"cat": "سينمائي",
+"desc": "إنذار، صاروخ، وميض أبيض، موجة صدمة، وسحابة فطر",
+"args": [],
+"icon": "☢️",
+"title": "ضربة نووية"
+},
+{
+"name": "blackhole",
+"aliases": [
+"ثقب",
+"ثقباسود",
+"bh"
+],
+"rank": 4,
+"cat": "سينمائي",
+"desc": "ثقب أسود يسحب اللاعبين ويشوه الكاميرا",
+"args": [],
+"icon": "🕳️",
+"title": "الثقب الأسود"
+},
+{
+"name": "earthquake",
+"aliases": [
+"زلزال",
+"quake"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "اهتزاز عنيف وتشققات في الأرض (القوة 1-10)",
+"args": [
+"number?"
+],
+"icon": "🌍",
+"title": "زلزال مدمّر"
+},
+{
+"name": "tornado",
+"aliases": [
+"اعصار",
+"إعصار",
+"twister"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "إعصار ضخم يمشي في الماب ويرفع اللاعبين",
+"args": [],
+"icon": "🌪️",
+"title": "الإعصار"
+},
+{
+"name": "storm",
+"aliases": [
+"عاصفة",
+"thunder",
+"رعد"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "ظلام، مطر، وصواعق تضرب الأرض",
+"args": [],
+"icon": "⛈️",
+"title": "عاصفة رعدية"
+},
+{
+"name": "blackout",
+"aliases": [
+"ظلام",
+"انقطاع",
+"كهرباء"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "الأنوار ترمش ثم ظلام كامل وكل لاعب معه كشاف",
+"args": [],
+"icon": "🔌",
+"title": "انقطاع الكهرباء"
+},
+{
+"name": "ufo",
+"aliases": [
+"فضائيين",
+"غزو",
+"aliens"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "صحن طائر عملاق ينزل ويخطف اللاعبين بشعاع أخضر",
+"args": [],
+"icon": "🛸",
+"title": "غزو فضائي"
+},
+{
+"name": "timestop",
+"aliases": [
+"ايقافالزمن",
+"زمن",
+"zawarudo"
+],
+"rank": 4,
+"cat": "سينمائي",
+"desc": "كل شي يتجمد بالأبيض والأسود إلا أنت",
+"args": [
+"number?"
+],
+"icon": "⏸️",
+"title": "إيقاف الزمن"
+},
+{
+"name": "apocalypse",
+"aliases": [
+"نهايةالعالم",
+"قيامة",
+"doom"
+],
+"rank": 4,
+"cat": "سينمائي",
+"desc": "سماء حمراء، رماد، كرات نار من كل مكان",
+"args": [],
+"icon": "🔥",
+"title": "نهاية العالم"
+},
+{
+"name": "snow",
+"aliases": [
+"ثلج",
+"شتاء",
+"blizzard"
+],
+"rank": 2,
+"cat": "سينمائي",
+"desc": "ثلج يتساقط وكل شي يصير أبيض (المدة بالثواني)",
+"args": [
+"number?"
+],
+"icon": "❄️",
+"title": "عاصفة ثلجية"
+},
+{
+"name": "tsunami",
+"aliases": [
+"تسونامي",
+"فيضان",
+"wave"
+],
+"rank": 4,
+"cat": "سينمائي",
+"desc": "موجة عملاقة تكتسح الماب",
+"args": [],
+"icon": "🌊",
+"title": "تسونامي"
+},
+{
+"name": "volcano",
+"aliases": [
+"بركان"
+],
+"rank": 4,
+"cat": "سينمائي",
+"desc": "بركان يطلع من الأرض ويقذف حمم",
+"args": [],
+"icon": "🌋",
+"title": "ثوران البركان"
+},
+{
+"name": "intro",
+"aliases": [
+"مقدمة",
+"cinematic",
+"سينما"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "أشرطة فيلم، كاميرا تدور حولك، وعنوان ضخم",
+"args": [
+"text?"
+],
+"icon": "🎬",
+"title": "مقدمة سينمائية"
+},
+{
+"name": "fireworks",
+"aliases": [
+"العاب",
+"العابنارية",
+"احتفال"
+],
+"rank": 2,
+"cat": "سينمائي",
+"desc": "عرض ألعاب نارية في الليل",
+"args": [],
+"icon": "🎆",
+"title": "ألعاب نارية"
+},
+{
+"name": "matrix",
+"aliases": [
+"ماتريكس"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "العالم يتحول أخضر، أكواد تنزل، والحركة تبطئ",
+"args": [],
+"icon": "💚",
+"title": "الماتريكس"
+},
+{
+"name": "disco",
+"aliases": [
+"ديسكو",
+"party",
+"حفلة"
+],
+"rank": 2,
+"cat": "سينمائي",
+"desc": "كرة ديسكو عملاقة وأضواء ملونة",
+"args": [],
+"icon": "🪩",
+"title": "حفلة ديسكو"
+},
+{
+"name": "heaven",
+"aliases": [
+"جنة",
+"قوسقزح",
+"rainbow"
+],
+"rank": 2,
+"cat": "سينمائي",
+"desc": "قوس قزح عملاق، توهج، ولمعة في كل مكان",
+"args": [],
+"icon": "🌈",
+"title": "السماء الساحرة"
+},
+{
+"name": "aurora",
+"aliases": [
+"شفق",
+"شفققطبي"
+],
+"rank": 2,
+"cat": "سينمائي",
+"desc": "ستائر ضوء خضراء وبنفسجية ترقص في السماء",
+"args": [],
+"icon": "🌌",
+"title": "الشفق القطبي"
+},
+{
+"name": "timelapse",
+"aliases": [
+"يوم",
+"تايملابس"
+],
+"rank": 2,
+"cat": "سينمائي",
+"desc": "شروق وغروب وليل في 24 ثانية",
+"args": [],
+"icon": "🌅",
+"title": "يوم كامل"
+},
+{
+"name": "horror",
+"aliases": [
+"رعب",
+"خوف"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "ظلام، ضباب أسود، دقات قلب، وأضواء حمراء",
+"args": [],
+"icon": "👁️",
+"title": "ليلة الرعب"
+},
+{
+"name": "slowmo",
+"aliases": [
+"بطيء",
+"سلوموشن"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "كل شي يبطئ مع تشويش سينمائي",
+"args": [
+"number?"
+],
+"icon": "🐌",
+"title": "حركة بطيئة"
+},
+{
+"name": "power",
+"aliases": [
+"قوة",
+"الاه",
+"godpower"
+],
+"rank": 4,
+"cat": "سينمائي",
+"desc": "ترتفع في الهواء وتطلق موجة طاقة تدفع الكل",
+"args": [],
+"icon": "⚡",
+"title": "استعراض القوة"
+},
+{
+"name": "airstrike",
+"aliases": [
+"غارة",
+"قصف"
+],
+"rank": 4,
+"cat": "سينمائي",
+"desc": "طائرات تمر وترمي قنابل على اللاعب",
+"args": [
+"players"
+],
+"icon": "✈️",
+"title": "غارة جوية"
+},
+{
+"name": "laser",
+"aliases": [
+"ليزر",
+"orbital",
+"قمر"
+],
+"rank": 4,
+"cat": "سينمائي",
+"desc": "دائرة تحذير ثم شعاع ليزر ضخم من الفضاء",
+"args": [
+"players"
+],
+"icon": "🛰️",
+"title": "ضربة الليزر المداري"
+},
+{
+"name": "stopevents",
+"aliases": [
+"وقفالاحداث",
+"stopall",
+"reset"
+],
+"rank": 3,
+"cat": "سينمائي",
+"desc": "يوقف كل الأحداث ويرجع الجو طبيعي",
+"args": [],
+"icon": "⏹️"
+}
+]

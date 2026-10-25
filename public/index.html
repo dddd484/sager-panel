@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>صقر | SAQR ADMIN</title>
+<link rel="icon" href="falcon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="space" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- شاشة الدخول -->
+<section id="login" class="login hidden">
+  <form id="loginForm" class="login-card tilt" autocomplete="on">
+    <div class="emblem big"><img src="falcon.svg" alt=""></div>
+    <h1>صقر <span>|</span> SAQR</h1>
+    <p class="muted">لوحة التحكم الخارجية — ادخل بحسابك</p>
+    <label>اسم المستخدم<input id="lu" name="username" autocomplete="username" required maxlength="32"></label>
+    <label>كلمة السر<input id="lp" name="password" type="password" autocomplete="current-password" required maxlength="200"></label>
+    <button class="btn gold wide" type="submit">دخول 🦅</button>
+    <p id="loginErr" class="err" role="alert"></p>
+  </form>
+</section>
+
+<!-- التطبيق -->
+<div id="app" class="app hidden">
+  <aside class="side">
+    <div class="brand">
+      <div class="emblem"><img src="falcon.svg" alt=""></div>
+      <div><b>صقر <span>|</span> SAQR</b><small>نظام الإدارة السينمائي</small></div>
+    </div>
+    <nav id="nav">
+      <button data-view="dash" class="on">🏠 <span>لوحة القيادة</span></button>
+      <button data-view="servers">🖥️ <span>السيرفرات</span></button>
+      <button data-view="players">👥 <span>اللاعبين</span></button>
+      <button data-view="cinema">🎬 <span>الأحداث السينمائية</span></button>
+      <button data-view="console">⌨️ <span>الكونسول</span></button>
+      <button data-view="logs">🗂️ <span>السجل</span></button>
+      <button data-view="commands">📜 <span>كل الأوامر</span></button>
+    </nav>
+    <div class="side-foot">
+      <div id="who" class="who"></div>
+      <button id="logout" class="btn ghost small">خروج</button>
+    </div>
+  </aside>
+
+  <main>
+    <header class="top">
+      <div>
+        <h2 id="viewTitle">لوحة القيادة</h2>
+        <p class="muted" id="viewSub">نظرة عامة على كل سيرفرات لعبتك مباشرة</p>
+      </div>
+      <div class="top-r">
+        <span id="demoBadge" class="pill warn hidden">وضع تجريبي</span>
+        <span id="live" class="pill live">● متصل</span>
+        <select id="target" aria-label="السيرفر المستهدف"></select>
+      </div>
+    </header>
+
+    <!-- لوحة القيادة -->
+    <section class="view" id="v-dash">
+      <div class="stats">
+        <div class="stat tilt"><i>🖥️</i><small>سيرفرات شغالة</small><b id="sServers">0</b></div>
+        <div class="stat tilt gold"><i>👥</i><small>لاعبين الحين</small><b id="sPlayers">0</b></div>
+        <div class="stat tilt"><i>⚡</i><small>أوامر اليوم</small><b id="sCmds">0</b></div>
+        <div class="stat tilt"><i>🎬</i><small>أحداث شغالة</small><b id="sEvents">0</b></div>
+      </div>
+      <div class="grid2">
+        <div class="panel tilt">
+          <div class="panel-h"><h3>⚡ تحكم سريع</h3><small class="muted">ينفذ على السيرفر المختار فوق</small></div>
+          <div class="quick" id="quick"></div>
+          <form class="ann" id="annForm">
+            <input id="annText" maxlength="200" placeholder="📢 اكتب إعلان يطلع سينمائي عند كل اللاعبين...">
+            <button class="btn gold">إرسال</button>
+          </form>
+        </div>
+        <div class="panel tilt">
+          <div class="panel-h"><h3>🗂️ آخر الأحداث</h3><button class="link" data-goto="logs">الكل ←</button></div>
+          <ul class="feed" id="miniLogs"></ul>
+        </div>
+      </div>
+      <div class="panel tilt">
+        <div class="panel-h"><h3>🌍 خريطة السيرفرات</h3><small class="muted">كل نقطة ذهبية في الكرة سيرفر شغال</small></div>
+        <div class="srv-strip" id="srvStrip"></div>
+      </div>
+    </section>
+
+    <!-- السيرفرات -->
+    <section class="view hidden" id="v-servers"><div class="cards" id="srvCards"></div></section>
+
+    <!-- اللاعبين -->
+    <section class="view hidden" id="v-players">
+      <div class="toolbar"><input id="pSearch" placeholder="🔍 ابحث عن لاعب..." maxlength="40"></div>
+      <div class="table-wrap"><table class="table" id="pTable"><thead><tr><th>اللاعب</th><th>الرتبة</th><th>السيرفر</th><th>إجراءات</th></tr></thead><tbody></tbody></table></div>
+    </section>
+
+    <!-- سينمائي -->
+    <section class="view hidden" id="v-cinema">
+      <div class="toolbar"><input id="cTarget" placeholder="🎯 الهدف للأحداث الموجهة (غارة/ليزر): اسم لاعب أو all" maxlength="40"></div>
+      <div class="events" id="events"></div>
+    </section>
+
+    <!-- الكونسول -->
+    <section class="view hidden" id="v-console">
+      <div class="panel console">
+        <div class="term" id="term"></div>
+        <form id="cmdForm" class="cmdline">
+          <span class="ps">;</span>
+          <input id="cmdInput" autocomplete="off" spellcheck="false" maxlength="400" placeholder="اكتب أي أمر... مثال: kick Ahmed سبام  |  meteor  |  gannounce مرحبا">
+          <button class="btn gold">تنفيذ ⚡</button>
+          <ul class="suggest hidden" id="suggest"></ul>
+        </form>
+      </div>
+    </section>
+
+    <!-- السجل -->
+    <section class="view hidden" id="v-logs">
+      <div class="toolbar">
+        <input id="lSearch" placeholder="🔍 فلترة السجل..." maxlength="40">
+        <div class="chips" id="lKinds">
+          <button data-k="" class="on">الكل</button><button data-k="cmd">أوامر</button><button data-k="security">حماية</button><button data-k="join">دخول</button><button data-k="leave">خروج</button>
+        </div>
+      </div>
+      <ul class="feed big" id="logs"></ul>
+    </section>
+
+    <!-- الأوامر -->
+    <section class="view hidden" id="v-commands">
+      <div class="toolbar"><input id="kSearch" placeholder="🔍 ابحث في الأوامر..." maxlength="40"></div>
+      <div id="cmdList" class="cmdlist"></div>
+    </section>
+  </main>
+</div>
+
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<div id="modal" class="modal hidden"><div class="modal-card"><h3 id="mTitle"></h3><input id="mInput" maxlength="200"><div class="modal-a"><button class="btn ghost" id="mCancel">إلغاء</button><button class="btn gold" id="mOk">تأكيد</button></div></div></div>
+<script src="app.js"></script>
+</body>
+</html>
